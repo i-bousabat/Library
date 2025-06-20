@@ -9,40 +9,64 @@
 </head>
 <body>
     
-    <div class="sidebar">
-        <form>
-            <h2>Add A New Book</h2>
+    <form>
+        <h2>Add A New Book</h2>
 
-            <div class="field">
-                <label for="book-title">TITLE</label>
-                <input id='book-title' name='book-title' type='text' required/>
-            </div>
+        <div class="field">
+            <label for="book-title">TITLE</label>
+            <input id='book-title' name='book-title' type='text' required/>
+        </div>
 
-            <div class="field">
-                <label for="author">AUTHOR</label>
-                <input id='author' name='author' type='text' required/>
-            </div>
+        <div class="field">
+            <label for="author">AUTHOR</label>
+            <input id='author' name='author' type='text' required/>
+        </div>
 
-            <div class="field">
-                <label for="pages">pages</label>
-                <input id='pages' name='pages' type='text' required/>
-            </div>
+        <div class="field">
+            <label for="pages">NUMBER OF PAGES</label>
+            <input id='pages' name='pages' type="number" min="1" step="1" required/>
+        </div>
         
 
-            <div class="field">
-                <label for="read">read</label>
-                <input id='read' name='read' type="???" required placeholder="your@read.com"/>
-            </div>
+        <div class="field">
+
+            <label>
+              <input type="radio" name="read" value="yes" required />
+              I have finished this book
+            </label>
+              
+            <label>
+              <input type="radio" name="read" value="no" />
+              I have not finished this book
+            </label>
+        </div>
                 
-        
+        <button type="submit">ADD THIS BOOK</button>
+    
 
-            <div class="button-row">
-                <button type="submit">ADD THIS BOOK</button>
-            </div>
+    </form>
 
-        </form>
-
-
-    </div>
+    <table class="book-table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Pages</th>
+            <th>Read</th>
+            <th></th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>The Hobbit</td>
+            <td>J.R.R. Tolkien</td>
+            <td>310</td>
+            <td>Yes</td>
+            <td></td>
+          </tr>
+          <!-- more rows dynamically inserted here -->
+        </tbody>
+      </table>
 </body>
 </html>
