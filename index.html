@@ -10,21 +10,23 @@
 <body>
     
     <form>
-        <h2>Add A New Book</h2>
+        <em>
+          <h2>Add A New Book</h2>
+        </em>
 
-        <div class="field">
+        <div class="field non-radio">
             <label for="book-title">TITLE</label>
-            <input id='book-title' name='book-title' type='text' required/>
+            <input id='book-title' name='book-title' type='text' required placeholder="Title"/>
         </div>
 
-        <div class="field">
+        <div class="field non-radio">
             <label for="author">AUTHOR</label>
-            <input id='author' name='author' type='text' required/>
+            <input id='author' name='author' type='text' required placeholder="Author"/>
         </div>
 
-        <div class="field">
+        <div class="field non-radio">
             <label for="pages">NUMBER OF PAGES</label>
-            <input id='pages' name='pages' type="number" min="1" step="1" required/>
+            <input id='pages' name='pages' type="number" min="1" step="1" required placeholder="Number of Pages"/>
         </div>
         
 
@@ -41,32 +43,34 @@
             </label>
         </div>
                 
-        <button type="submit">ADD THIS BOOK</button>
+        <em><button type="submit">ADD THIS BOOK</button></em>
     
 
     </form>
 
-    <table class="book-table">
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Pages</th>
-            <th>Read</th>
-            <th></th>
-            
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>The Hobbit</td>
-            <td>J.R.R. Tolkien</td>
-            <td>310</td>
-            <td>Yes</td>
-            <td></td>
-          </tr>
-          <!-- more rows dynamically inserted here -->
-        </tbody>
-      </table>
+    <main>
+      <table class="book-table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Pages</th>
+              <th>Read</th>
+              <th>Delete?</th>
+      
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>The Hobbit</td>
+              <td>J.R.R. Tolkien</td>
+              <td>310</td>
+              <td>Yes</td>
+              <td>Trash can image</td>
+            </tr>
+            <!-- more rows dynamically inserted here -->
+          </tbody>
+        </table>
+    </main>
 </body>
 </html>

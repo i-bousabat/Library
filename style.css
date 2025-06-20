@@ -84,20 +84,30 @@ form h2 {
     display: flex;
     flex-direction: column;
 }
+
+
 input {
     border: none;
     border-bottom: 1px dashed var(--blue);
     background-color: var(--cream);
+}
+
+.non-radio input:focus {
+    outline: none;
+    border: none;
+    border-bottom: 0.5px solid white;
+
 }
 form button {
     width: fit-content;
     color: var(--white);
     background-color: var(--blue);
     text-align: center;
-    border-radius: 5px;
+    border-radius: 1px;
     padding: 7px 30px 7px 30px;
     margin-bottom: 20%;
     border: none;
+    font-weight: lighter;
 }
 input[type="radio"] {
     appearance: none;
@@ -113,16 +123,24 @@ input[type="radio"] {
   
 input[type="radio"]:checked {
 background-color: var(--blue);
-border-color: var(--dark-green);
 }
 
-
-
-table{
-
-    justify-self: center;
+main {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex: 1;
 }
-
+.book-table{
+    border-collapse: collapse;
+    font-size: 1.5rem;
+    align-self: center;
+}
+th, td {
+    width: 12vw;
+    font-weight: lighter;
+    text-align: center;
+}
 thead {
     color: var(--white);
     background: var(--blue);
