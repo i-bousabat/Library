@@ -1,4 +1,4 @@
-const myLibrary = [];
+let myLibrary = [];
 
 function Book(title, author, pages, read, id) {
     if (!new.target) {
@@ -10,7 +10,7 @@ function Book(title, author, pages, read, id) {
   this.read = read;
   this.id = id;
   this.info = function() {
-    return `${title}, ${author}, ${pages}, ${read}`
+    return `${title}, ${author}, ${pages}, ${read}`;
   };
 }
 
@@ -21,18 +21,68 @@ function addBookToLibrary(title, author, pages, read) {
 
 }
 
-function display() {
+const tbody = document.querySelector('tbody');
 
-    for (i of myLibrary) {
+function display() {
+  tbody.innerHTML = '';
+    for (let i of myLibrary) {
+      const row = document.createElement('tr');
+      row.dataset.id = i.id;
+
+      row.innerHTML =
+      `
+      <td>${i.title}</td>
+      <td>${i.author}</td>
+      <td>${i.pages}</td>
+      <td>${i.read === "yes" ? "Yes" : "No"}</td>
+      <td class="delete">🗑️</td>
+      `;
+      tbody.appendChild(row);
         
     }
 }
 
-// addBookToLibrary('a','auth1',10,true);
-// addBookToLibrary('b','auth2',20,false);
-// addBookToLibrary('c','auth3',30,true);
-// addBookToLibrary('d','auth4',40,false);
-// addBookToLibrary('e','auth5',50,true);
+tbody.addEventListener('click', (e) => {
 
-// console.log(myLibrary);
+  if (e.target.classList.contains('delete')) {
+    let row = e.target.closest("tr");
+
+    let bookId = row.dataset.id;
+    row.remove();
+
+    myLibrary = myLibrary.filter(book => book.id !== bookId);
+  }
+});
+
+
+
+const form = document.querySelector('form');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  
+  const title = form.elements["book-title"].value;
+  const author = form.elements["author"].value;
+  const pages = form.elements["pages"].value;
+  const read = form.elements["read"].value;
+
+  addBookToLibrary(title, author, pages, read);
+  display();
+
+  form.reset();
+  alert(myLibrary)
+
+});
+
+
+
+
+addBookToLibrary('Clean Code', 'Robert C. Martin', 464, 'yes');
+addBookToLibrary('Introduction to Algorithms', 'Thomas H. Cormen', 1312, 'yes');
+addBookToLibrary('Design Patterns', 'Erich Gamma', 395, 'yes');
+addBookToLibrary('The Pragmatic Programmer', 'Andrew Hunt', 352, 'yes');
+addBookToLibrary('Structure and Interpretation of Computer Programs', 'Harold Abelson', 657, 'yes');
+
+
+display();
 

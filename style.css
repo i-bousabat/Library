@@ -61,9 +61,12 @@
 
 body {
     display: flex;
+    background-color: rgb(240, 235, 235);
 }
 
 form {
+    position: sticky;
+    top: 0;
     color: var(--blue);
     font-size: 1.5rem;
     height: 100vh;
@@ -137,11 +140,34 @@ main {
     align-self: center;
 }
 th, td {
-    width: 12vw;
+    width: 10vw;
     font-weight: lighter;
     text-align: center;
+    padding: 1.5rem;
 }
-thead {
+
+tr{
+  border-bottom: 1px dashed var(--blue);
+}
+tbody tr:hover {
+  background-color: var(--cream);
+}
+
+thead{
     color: var(--white);
     background: var(--blue);
+}
+tbody{
+  color:var(--blue);
+}
+
+.delete {
+  font-size: 2rem;
+  transition: font-size 0.2s ease;
+  color: red;
+
+}
+.delete:hover {
+  font-size: 3rem;
+  cursor: pointer;
 }
