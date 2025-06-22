@@ -69,7 +69,7 @@ form.addEventListener('submit', (e) => {
   addBookToLibrary(title, author, pages, read);
   display();
 
-  form.reset();
+  form.reset(); //clear form
   alert(myLibrary)
 
 });
@@ -78,11 +78,14 @@ form.addEventListener('submit', (e) => {
 
 
 addBookToLibrary('Clean Code', 'Robert C. Martin', 464, 'yes');
-addBookToLibrary('Introduction to Algorithms', 'Thomas H. Cormen', 1312, 'yes');
+addBookToLibrary('Introduction to Algorithms', 'Thomas H. Cormen', 1312, 'no');
 addBookToLibrary('Design Patterns', 'Erich Gamma', 395, 'yes');
-addBookToLibrary('The Pragmatic Programmer', 'Andrew Hunt', 352, 'yes');
+addBookToLibrary('The Pragmatic Programmer', 'Andrew Hunt', 352, 'no');
 addBookToLibrary('Structure and Interpretation of Computer Programs', 'Harold Abelson', 657, 'yes');
 
+addBookToLibrary('Operating Systems: Three Easy Pieces', 'Remzi H. Arpaci-Dusseau', 832, 'no');
+addBookToLibrary('Computer Systems: A Programmer\'s Perspective', 'Randal E. Bryant', 1120, 'yes');
+addBookToLibrary('Artificial Intelligence: A Modern Approach', 'Stuart Russell', 1132, 'no');
 
 display();
 
