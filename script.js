@@ -70,7 +70,7 @@ form.addEventListener('submit', (e) => {
   display();
 
   form.reset(); //clear form
-  alert(myLibrary)
+  //alert(myLibrary)
 
 });
 
